@@ -3,9 +3,9 @@ import classes from './QuizList.module.css'
 import { NavLink } from 'react-router-dom'
 import Loader from '../../components/UI/Loader/Loader'
 import {connect} from "react-redux";
+
 import quizReducer from "../../store/reducers/quizreducer";
 import {fetchQuizes} from "../../store/actions/quiz";
-
 
 class QuizList extends Component {
 
@@ -22,8 +22,8 @@ class QuizList extends Component {
             )
         })
     }
-
     componentDidMount() {
+
         this.props.fetchQuizes()
 
     }
@@ -56,6 +56,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
+
     fetchQuizes: () => dispatch(fetchQuizes())
     }
 }

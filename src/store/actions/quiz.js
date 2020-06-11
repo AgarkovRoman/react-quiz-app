@@ -1,4 +1,5 @@
 import axios from "../../axios/axios-quiz";
+
 import {
     FETCH_QUIZ_SUCCESS,
     FETCH_QUIZES_ERROR,
@@ -8,6 +9,7 @@ import {
 } from "./actionTypes";
 
 export function fetchQuizes() {
+
     return async dispatch => {
         dispatch(fetchQuizesStart())
         try {
@@ -22,7 +24,9 @@ export function fetchQuizes() {
             })
         dispatch(fetchQuizesSuccess(quizes))
         } catch (e) {
+
         dispatch(fetchQuizesError(e))
+
         }
     }
 }
@@ -65,6 +69,7 @@ export function fetchQuizesSuccess(quizes) {
 export function fetchQuizesError(e) {
     return {
         type: FETCH_QUIZES_ERROR,
+
         erroe: e,
     }
 }
